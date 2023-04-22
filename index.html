@@ -19,32 +19,360 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-whtie dark:bg-slate-900 transition-all">
-
-    
+<body class="bg-blue-800 dark:bg-slate-900 transition-all">
+    <div class="absolute top-0 left-0">
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+    </div>
+    <div class="h-screen flex justify-center items-center">
+        <div class="w-8/12 h-[80vh] bg-white dark:bg-blue-900 rounded-lg overflow-hidden flex" x-data="{openTab:0}">
+            <div class="w-96 overflow-y-auto">
+                <div class="flex space-x-2 items-center border-b-2 dark:border-gray-800 p-2 transition-all bg-gray-200 dark:bg-slate-800">
+                    <div>
+                        <img src="https://avatars.githubusercontent.com/u/49550675?v=4" alt="user-profile"
+                            class="w-16 h-16 rounded-full">
+                    </div>
+                    <div>
+                        <div>
+                            <h1 class="text-black dark:text-gray-50">bashizade.dev</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-gray-400">+989334649700</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2 items-center border-b-2 dark:border-gray-800 p-2 transition-all hover:dark:bg-slate-800 cursor-pointer" @click="openTab = 1">
+                    <div>
+                        <img src="./3.jpg" alt="user-profile" class="w-16 h-16 rounded-full">
+                    </div>
+                    <div>
+                        <div>
+                            <h1 class="text-black dark:text-gray-50">mia</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-gray-400">lorem.....</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2 items-center border-b-2 dark:border-gray-800 p-2 transition-all hover:dark:bg-slate-800 cursor-pointer" @click="openTab = 2">
+                    <div>
+                        <img src="./2.jpg" alt="user-profile" class="w-16 h-16 rounded-full">
+                    </div>
+                    <div>
+                        <div>
+                            <h1 class="text-black dark:text-gray-50">daniel</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-gray-400">lorem.....</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-blue-100 dark:bg-slate-800">
+                <div x-show="openTab == 1" x-transition class="h-full flex flex-col justify-between">
+                    <!-- user profile message sent to -->
+                    <div class="bg-indigo-800 h-24 flex justify-between items-center p-2">
+                        <div class="flex items-center space-x-2 text-gray-50">
+                            <div>
+                                <img src="./3.jpg" alt="user-profile"
+                                    class="w-16 h-16 rounded-full">
+                            </div>
+                            <div>
+                                <div>
+                                    <h1>mia</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-xs">Last seen recently</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chat content -->
+                    <div class="h-full p-2 overflow-y-auto">
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chat message write box -->
+                    <div class="flex justify-center space-x-2 p-1">
+                        <div>
+                            <input type="text" name="message" placeholder="message......" autocomplete="off" id=""
+                                class="rounded-2xl outline-none border-none w-96 h-12 bg-white dark:bg-slate-700 text-black dark:text-white">
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div>
+                                <button type="button" class="bg-slate-600 p-3 rounded-full text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" class="bg-blue-600 p-3 rounded-full text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div x-show="openTab == 2" x-transition class="h-full flex flex-col justify-between">
+                    <!-- user profile message sent to -->
+                    <div class="bg-indigo-800 h-24 flex justify-between items-center p-2">
+                        <div class="flex items-center space-x-2 text-gray-50">
+                            <div>
+                                <img src="./2.jpg" alt="user-profile"
+                                    class="w-16 h-16 rounded-full">
+                            </div>
+                            <div>
+                                <div>
+                                    <h1>daniel</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-xs">Last seen recently</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chat content -->
+                    <div class="h-full p-2 overflow-y-auto">
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <div class="bg-blue-800 rounded-xl rounded-bl-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-2">
+                            <div class="bg-blue-500 rounded-xl rounded-br-none max-w-xl text-gray-50 p-1">
+                                <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquam quam ab
+                                    fugit unde modi, rerum officia inventore voluptates, voluptas voluptatibus quia
+                                    repudiandae nisi! Odit distinctio officia dolorum deleniti adipisci!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chat message write box -->
+                    <div class="flex justify-center space-x-2 p-1">
+                        <div>
+                            <input type="text" name="message" placeholder="message......" autocomplete="off" id=""
+                                class="rounded-2xl outline-none border-none w-96 h-12 bg-white dark:bg-slate-700 text-black dark:text-white">
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div>
+                                <button type="button" class="bg-slate-600 p-3 rounded-full text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" class="bg-blue-600 p-3 rounded-full text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
-        let sideIsOpen = false;
-        document.getElementById("OpenSidebarMobile").addEventListener('click', () => {
-            if (sideIsOpen) {
-                document.getElementById("Sidebar").classList.add('hidden');
-                sideIsOpen = false;
-            } else {
-                document.getElementById("Sidebar").classList.remove('hidden');
-                sideIsOpen = true;
-            }
-        });
-        document.getElementById("OpenSidebarMobilee").addEventListener('click', () => {
-            if (sideIsOpen) {
-                document.getElementById("Sidebar").classList.add('hidden');
-                sideIsOpen = false;
-            } else {
-                document.getElementById("Sidebar").classList.remove('hidden');
-                sideIsOpen = true;
-            }
-        });
+        
 
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
